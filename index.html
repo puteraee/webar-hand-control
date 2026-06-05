@@ -12,16 +12,21 @@
   <video id="webcam" autoplay playsinline style="display:none;"></video>
 
 <a-scene vr-mode-ui="enabled: false">
-    <a-entity camera position="0 0 0"></a-entity>
+  <a-assets>
+    <a-asset-item id="custom-mesh" src="model.glb"></a-asset-item>
+  </a-assets>
 
-    <a-box id="target-model" 
-           position="0 0 -3" 
-           rotation="0 45 0" 
-           color="#4CC3D9" 
-           material="roughness: 0.2; metalness: 0.5;">
-    </a-box>
+  <a-entity camera position="0 0 0"></a-entity>
 
-    <a-sky color="#ECECEC" opacity="0.4"></a-sky> </a-scene>
+  <a-entity id="target-model" 
+            gltf-model="#custom-mesh" 
+            position="0 -0.5 -3" 
+            scale="1 1 1" 
+            rotation="0 45 0">
+  </a-entity>
+
+  <a-sky color="#ECECEC" opacity="0.4"></a-sky>
+</a-scene>
 
   <script src="app.js"></script>
 </body>
