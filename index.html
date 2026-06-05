@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WebAR Hand Gesture Control</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+  <video id="webcam" autoplay playsinline style="display:none;"></video>
+
+<a-scene vr-mode-ui="enabled: false">
+    <a-entity camera position="0 0 0"></a-entity>
+
+    <a-box id="target-model" 
+           position="0 0 -3" 
+           rotation="0 45 0" 
+           color="#4CC3D9" 
+           material="roughness: 0.2; metalness: 0.5;">
+    </a-box>
+
+    <a-sky color="#ECECEC" opacity="0.4"></a-sky> </a-scene>
+
+  <script src="app.js"></script>
+</body>
+</html>
